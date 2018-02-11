@@ -49,27 +49,27 @@ The REST endpoint is available at *localhost:<server.port>/projects* and speaks 
 #### `GET`
 
 * on **/:projectId** returns
-** found ``Project`` if available
-** ``ErrorResponse(1000)`` with HTTP status 400 if no ``Project`` with ``projectId`` is available
+   * found ``Project`` if available
+   * ``ErrorResponse(1000)`` with HTTP status 400 if no ``Project`` with ``projectId`` is available
 
 * on **/** returns all available ``Project`` entities as JSON array
 
 #### `PUT`
 
 * on **/** with ``Project`` as json request body returns
-** *newly* saved ``Project`` if successful
-** ``ErrorResponse(1000)`` with http status 400 if no ``Project`` with ``projectId`` is available
+   * *newly* saved ``Project`` if successful
+   * ``ErrorResponse(1000)`` with http status 400 if no ``Project`` with ``projectId`` is available
 
 #### `POST`
 
 * on **/** with ``Project`` as json request body returns
-** *uodated* ``Project`` if successful
-** ``ErrorResponse(1001)`` with http status 400 if no ``Project`` with ``projectId`` is available
+   * *updated* ``Project`` if successful
+   * ``ErrorResponse(1001)`` with http status 400 if no ``Project`` with ``projectId`` is available
 
 #### `DELETE`
 
 * on **/:projectId** returns
-** ``Result`` entity if successful, i.e. corresponding `Project` can be found and deleted
-** ``ErrorResponse(1000)`` with http status 400 if no ``Project`` with ``projectId`` is available
+   * ``Result`` entity if successful, i.e. corresponding `Project` can be found and deleted
+   * ``ErrorResponse(1000)`` with http status 400 if no ``Project`` with ``projectId`` is available
 
 * on **/** returns ``Result`` entity, all `Project`s will be removed
