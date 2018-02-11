@@ -1,9 +1,9 @@
-﻿# REST Service for projects management
+﻿# Reactive REST service for projects management
 
 
 ## Description
 
-This project includes a sample REST service written in Kotlin using the Vert.x microservice toolset.
+This project includes a sample REST service written in Kotlin using the Vert.x reactive microservice toolset.
 
 ## Run it
 
@@ -34,7 +34,7 @@ The application may be started with "dev" profile which will make the applicatio
 Simply pass the following argument when starting: `--profile=dev`
 
 
-## REST-Interface
+## REST interface
 
 The REST endpoint is available at *localhost:<server.port>/projects* and speaks Json.
 
