@@ -16,15 +16,13 @@ This project includes a sample REST service written in Kotlin using the Vert.x m
 
 The application can be configured with following arguments
 
-|===
-|Parameter | Description | Default
+|    Parameter        | Description | Default| 
+| -------------------    | ------------------------------    |----------|
+| server.port|Port of REST endpoint|8181|
+| mongo.host|Host name of running MongoDB instance|localhost|
+| mongo.port|Port of running MongoDB instance|27017|
+| mongo.dbname|Database name in MongoDB instance|projects_db|    
 
-|server.port|Port of REST endpoint|8181
-|mongo.host|Host name of running MongoDB instance|localhost
-|mongo.port|Port of running MongoDB instance|27017
-|mongo.dbname|Database name in MongoDB instance|projects_db
-
-|===
 
 All values may be overriden by passing the arguments as follows: <br>
 *"--server.port=8181"*
@@ -42,36 +40,36 @@ The REST endpoint is available at *localhost:<server.port>/projects* and speaks 
 
 ### Entities
 
-*Entity* ``Project(_id: String, name: String)`` +
-*Entity* ``Result(success: Boolean)``
+*Entity* ``Project(_id: String, name: String)`` <br>
+*Entity* ``Result(success: Boolean)`` <br>
 *Entity* ``ErrorResponse(message: String, error: Int, context: String)``
 
 ### Methods
 
 #### `GET`
 
-* on */:projectId* returns
+* on **/:projectId** returns
 ** found ``Project`` if available
 ** ``ErrorResponse(1000)`` with HTTP status 400 if no ``Project`` with ``projectId`` is available
 
-* on */* returns all available ``Project`` entities as JSON array
+* on **/** returns all available ``Project`` entities as JSON array
 
 #### `PUT
 
-* on */* with ``Project`` as json request body returns
+* on **/** with ``Project`` as json request body returns
 ** *newly* saved ``Project`` if successful
 ** ``ErrorResponse(1000)`` with http status 400 if no ``Project`` with ``projectId`` is available
 
 #### `POST`
 
-* on */* with ``Project`` as json request body returns
+* on **/** with ``Project`` as json request body returns
 ** *uodated* ``Project`` if successful
 ** ``ErrorResponse(1001)`` with http status 400 if no ``Project`` with ``projectId`` is available
 
 #### `DELETE`
 
-* on */:projectId* returns
+* on **/:projectId** returns
 ** ``Result`` entity if successful, i.e. corresponding `Project` can be found and deleted
 ** ``ErrorResponse(1000)`` with http status 400 if no ``Project`` with ``projectId`` is available
 
-* on */* returns ``Result`` entity, all `Project`s will be removed
+* on **/** returns ``Result`` entity, all `Project`s will be removed
