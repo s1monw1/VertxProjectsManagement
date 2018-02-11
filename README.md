@@ -10,7 +10,7 @@ This project includes a sample REST service written in Kotlin using the Vert.x m
 - Build with    `/.gradlew build`, creates JAR in build/libs
 - Start with  `/.gradlew run`, executes `main` directly, no command line arguments can be passed
 - Start with arguments by executing JAR from build/libs  with <br>
-*java -jar <jarname> --server.port=8181*
+`java -jar <jarname> --server.port=8181`
 
 ## Configuration
 
@@ -31,7 +31,7 @@ All values may be overridden by passing the arguments as follows: <br>
 ### Profiles
 
 The application may be started with "dev" profile which will make the application on an in-memory database. <br>
-Simply pass the following argument when starting: `"--profile=dev"`
+Simply pass the following argument when starting: `--profile=dev`
 
 
 ## REST-Interface
@@ -54,7 +54,7 @@ The REST endpoint is available at *localhost:<server.port>/projects* and speaks 
 
 * on **/** returns all available ``Project`` entities as JSON array
 
-#### `PUT
+#### `PUT`
 
 * on **/** with ``Project`` as json request body returns
 ** *newly* saved ``Project`` if successful
