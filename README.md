@@ -5,14 +5,14 @@
 
 This project includes a sample REST service written in Kotlin using the Vert.x microservice toolset.
 
-== Run it
+## Run it
 
 - Build with    `/.gradlew build`, creates JAR in build/libs
 - Start with  `/.gradlew run`, executes `main` directly, no command line arguments can be passed
 - Start with arguments by executing JAR from build/libs  with <br>
 *java -jar <jarname> --server.port=8181*
 
-== Configuration
+## Configuration
 
 The application can be configured with following arguments
 
@@ -30,25 +30,25 @@ All values may be overriden by passing the arguments as follows: <br>
 *"--server.port=8181"*
 
 
-=== Profiles
+### Profiles
 
 The application may be started with "dev" profile which will make the application on an in-memory database. <br>
 Simply pass the following argument when starting: *"--profile=dev"*
 
 
-== REST-Interface
+## REST-Interface
 
 The REST endpoint is available at *localhost:<server.port>/projects* and speaks Json.
 
-=== Entities
+### Entities
 
 *Entity* ``Project(_id: String, name: String)`` +
 *Entity* ``Result(success: Boolean)``
 *Entity* ``ErrorResponse(message: String, error: Int, context: String)``
 
-=== Methods
+### Methods
 
-==== GET
+#### `GET`
 
 * on */:projectId* returns
 ** found ``Project`` if available
@@ -56,19 +56,19 @@ The REST endpoint is available at *localhost:<server.port>/projects* and speaks 
 
 * on */* returns all available ``Project`` entities as JSON array
 
-==== PUT
+#### `PUT
 
 * on */* with ``Project`` as json request body returns
 ** *newly* saved ``Project`` if successful
 ** ``ErrorResponse(1000)`` with http status 400 if no ``Project`` with ``projectId`` is available
 
-==== POST
+#### `POST`
 
 * on */* with ``Project`` as json request body returns
 ** *uodated* ``Project`` if successful
 ** ``ErrorResponse(1001)`` with http status 400 if no ``Project`` with ``projectId`` is available
 
-==== DELETE
+#### `DELETE`
 
 * on */:projectId* returns
 ** ``Result`` entity if successful, i.e. corresponding `Project` can be found and deleted
