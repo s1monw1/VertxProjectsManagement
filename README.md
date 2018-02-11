@@ -24,14 +24,14 @@ The application can be configured with following arguments
 | mongo.dbname|Database name in MongoDB instance|projects_db|    
 
 
-All values may be overriden by passing the arguments as follows: <br>
-*"--server.port=8181"*
+All values may be overridden by passing the arguments as follows: <br>
+`--server.port=8181`
 
 
 ### Profiles
 
 The application may be started with "dev" profile which will make the application on an in-memory database. <br>
-Simply pass the following argument when starting: *"--profile=dev"*
+Simply pass the following argument when starting: `"--profile=dev"`
 
 
 ## REST-Interface
